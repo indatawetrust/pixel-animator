@@ -15,6 +15,16 @@ div{
   top:235px;
 }
 
+input[type=range]{
+  position:absolute;
+  top:260px;left:5px;
+}
+
+span{
+  position:absolute;
+  top:260px;left:170px;
+}
+
 canvas{
   float:left;
 }
@@ -27,6 +37,7 @@ canvas{
 <canvas id="frame" width="200" height="200"></canvas>
 <canvas id="colors" width="200" height="20"></canvas>
 <div><button id="add">add</button><button id="remove">remove</button><button id="start">start</button><button id="reset">reset</button></div>
+<span>50 ms</span><input type="range" min="10" max="1000" step="5" value="50">
 <script src="dist/pixel.js"></script>
 </body>
 </html>

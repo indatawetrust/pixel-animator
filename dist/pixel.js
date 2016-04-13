@@ -2,6 +2,8 @@
 
 var canvas = document.querySelector('#frame'),
     colorSelector = document.querySelector('#colors'),
+    time = document.querySelector('input'),
+    span = document.querySelector('span'),
     c = canvas.getContext('2d'),
     _c = colorSelector.getContext('2d'),
     add = document.querySelector('#add'),
@@ -62,6 +64,7 @@ colorSelector.addEventListener('mousedown', function (e) {
   selectColor = colors[dx];
 });
 
+// frame create
 var frame = function frame() {
   var maps = [];
 
@@ -142,11 +145,13 @@ canvas.addEventListener('mouseout', function (e) {
   list = [];
 });
 
+// add frame
 add.addEventListener('click', function () {
   frames.push(frame());
   draw(frames[frames.length - 2], 0.5);
 });
 
+// remove frame
 remove.addEventListener('click', function () {
   clearInterval(interval);
   frames.pop();
@@ -157,19 +162,23 @@ remove.addEventListener('click', function () {
     frames.push(frame());
     draw(frames[0]);
   }
+
+  interval = null;
 });
 
+// start animation
 start.addEventListener('click', function () {
   var i = -1;
 
   interval = setInterval(function () {
     if (frames.length - 1 == i++) i = 0;
     draw(frames[i], 1);
-  }, 100);
+  }, time.value);
 
   start.setAttribute('disabled', 1);
 });
 
+// reset animation
 reset.addEventListener('click', function () {
   start.removeAttribute('disabled');
 
@@ -177,4 +186,23 @@ reset.addEventListener('click', function () {
   frames = [];
   frames.push(frame());
   draw(frames[0]);
+  interval = null;
+});
+
+// frame time change
+time.addEventListener('mouseup', function (e) {
+  span.innerText = time.value + ' ms';
+
+  if (interval != null) {
+    (function () {
+      clearInterval(interval);
+
+      var i = -1;
+
+      interval = setInterval(function () {
+        if (frames.length - 1 == i++) i = 0;
+        draw(frames[i], 1);
+      }, time.value);
+    })();
+  }
 });

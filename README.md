@@ -6,7 +6,8 @@
 
 ####http-server
 
-color selector added
+~color selector added
+~frame timer added
 
 ![image](http://i.hizliresim.com/RkvZE7.png)
 
