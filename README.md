@@ -1,6 +1,6 @@
 # pixel-animator
 
-######[jsfiddle](https://jsfiddle.net/indatawetrust/2zsqmfab/7/)
+######[demo](https://jsfiddle.net/indatawetrust/2zsqmfab/14/)
 
 ####npm install -g http-server
 
