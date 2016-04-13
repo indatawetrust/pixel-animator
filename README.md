@@ -1,9 +1,10 @@
 # pixel-animator
-Html5 canvas pixel animator
 
-npm install -g http-server
+######[jsfiddle](https://jsfiddle.net/indatawetrust/2zsqmfab/7/)
 
-http-server
+####npm install -g http-server
+
+####http-server
 
 color selector added
 
