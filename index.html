@@ -1,8 +1,31 @@
 <!doctype html>
 <html>
 <head><title>pixel animator</title></head>
+<style>
+html,body{
+  width:200px
+}
+button{
+  border:solid 1px #000;
+  padding:4px;background-color:#fff;
+}
+
+div{
+  position:absolute;
+  top:235px;
+}
+
+canvas{
+  float:left;
+}
+
+#colors{
+  margin-top:4px;
+}
+</style>
 <body>
-<canvas width="200" height="200"></canvas>
+<canvas id="frame" width="200" height="200"></canvas>
+<canvas id="colors" width="200" height="20"></canvas>
 <div><button id="add">add</button><button id="remove">remove</button><button id="start">start</button><button id="reset">reset</button></div>
 <script src="dist/pixel.js"></script>
 </body>
